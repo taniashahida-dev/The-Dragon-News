@@ -5,7 +5,7 @@ import "./globals.css";
 const poppins = Poppins({
   variable: "--popppins",
   subsets: ["latin"],
-  weight:["500","600"]
+  weight:["500","600","800"]
 })
 
 
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       lang="en" data-theme='light'
       className={`h-full antialiased`}
     >
-      <body className={`min-h-full flex flex-col ${poppins.className}`}>{children}</body>
+      <body className={`min-h-full flex flex-col ${poppins.className} `}>{children}</body>
     </html>
   );
 }
