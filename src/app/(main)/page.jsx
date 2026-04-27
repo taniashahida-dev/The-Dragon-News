@@ -1,4 +1,5 @@
 import Categories from "@/components/Homepage/Categories"
+import LogInSec from "@/components/Homepage/LogInSec"
 
 
 const CategoryData= async()=>{
@@ -25,7 +26,8 @@ export default async function Home() {
      
     </div>
     <div className="col-span-1">
-      <h1>Login with</h1>
+      <LogInSec></LogInSec>
+     
     </div>
    </div>
   );

@@ -4,7 +4,7 @@ import React from "react";
 const Categories = ({ data, active_id }) => {
   return (
     <div>
-      <h1 className="text-xl font-bold mb-3">All Caterogy</h1>
+      <h1 className="text-xl font-semibold mb-3">All Caterogy</h1>
 
       <ul>
         {data.news_category.map((category) => (
