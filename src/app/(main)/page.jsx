@@ -1,3 +1,4 @@
+import Categories from "@/components/Homepage/Categories"
 
 
 const CategoryData= async()=>{
@@ -14,12 +15,9 @@ export default async function Home() {
  
   return (
    <div className="grid grid-cols-4 my-10 gap-3">
-    <div className="col-span-1"><h1 className="text-xl font-bold mb-3">All Caterogy</h1>
-     <ul>
-{
-  data.news_category.map(category=> <li key={category.category_id} className="p-3 bg-mauve-400 text-lg text-center my-4 rounded-sm">{category.category_name}</li>)
-}
-      </ul>
+    <div className="col-span-1">
+      <Categories data={data} active_id={"01"}></Categories>
+    
     </div>
 
     <div className="col-span-2">
