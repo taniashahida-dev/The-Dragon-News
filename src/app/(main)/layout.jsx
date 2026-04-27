@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 
 const MailLayout = ({children}) => {
     return (
-        <div>
+        <div className='w-10/12 mx-auto'>
             <Header></Header>
             <Navbar></Navbar>
             {children}
