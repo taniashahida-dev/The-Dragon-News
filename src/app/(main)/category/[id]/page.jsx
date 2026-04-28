@@ -1,5 +1,6 @@
 import Categories from "@/components/Homepage/Categories";
 import LogInSec from "@/components/Homepage/LogInSec";
+import NewsCard from "@/components/Homepage/NewsCard";
 import { CategoryData, getNewsCategory } from "@/lib/data";
 
 
@@ -24,7 +25,7 @@ const NewsCategory =async ({params}) => {
       <h1 className="text-xl font-semibold mb-3">News by categories</h1>
       <div>
         {
-          news?.map(n=><h1 key={n._id} className="bg-gray-100 p-5 border my-3 rounded-lg">{n.title}</h1>)
+         news.length>0? news?.map(n=> <NewsCard key={n._id} news={n}></NewsCard> ): <h1 className="text-4xl text-center text-mauve-700 mt-20">No News Found</h1>
         }
       </div>
      
