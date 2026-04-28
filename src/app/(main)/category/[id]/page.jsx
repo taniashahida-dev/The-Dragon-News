@@ -25,7 +25,7 @@ const NewsCategory =async ({params}) => {
       <h1 className="text-xl font-semibold mb-3">News by categories</h1>
       <div>
         {
-         news.length>0? news?.map(n=> <NewsCard key={n._id} news={n}></NewsCard> ): <h1 className="text-4xl text-center text-mauve-700 mt-20">No News Found</h1>
+         news.length>0? news?.map(n=> <NewsCard key={n._id} news={n}></NewsCard> ): <h1 className="text-4xl text-center text-mauve-700 mt-20">No News Found!!</h1>
         }
       </div>
      

@@ -43,7 +43,7 @@ const NewsCard = ({ news }) => {
 
        <div>
          <p className="line-clamp-3 text-sm text-gray-600 my-4">{news.details}</p>
-        <Link href={`/news/${news.category_id}`}><p className="text-orange-600 text-lg">Read More..</p></Link>
+        <Link href={`/news/${news._id}`}><p className="text-orange-600 text-lg">Read More..</p></Link>
        </div>
         <div className="divider"></div>
         <div className="flex justify-between text-gray-500 items-center">
