@@ -11,7 +11,7 @@ const LogInSec = () => {
                   <button className="flex gap-2 items-center btn w-full text-lg text-blue-500 border-blue-500"><FaGoogle />
                     Login With Google</button>
                 
-                    <button className="flex gap-2 items-center btn w-full text-lg">
+                    <button className="flex gap-2 items-center btn w-full text-lg border-black">
                        <FaGithub /> Login With Github</button>
                 
              </div>
