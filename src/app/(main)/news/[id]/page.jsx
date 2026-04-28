@@ -5,12 +5,21 @@ import Link from 'next/link';
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 
+  export async function generateMetadata({params}){
+const {id} = await  params
 
+const news = await getDetails(id)
+// console.log(data)
+return {
+    title: news.title,
+    description: news.details,
+  };
+  }
 const NewsDetails =async ({params}) => {
     const {id} = await params
-    console.log(id)
+    // console.log(id)
     const data = await getDetails(id)
-    console.log(data)
+    // console.log(data)
     return (
          <div className='grid grid-cols-4 gap-4'>
           <div className="card shadow-lg my-6 col-span-3">

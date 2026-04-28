@@ -1,6 +1,10 @@
+   export const metadata = {
+  title: "Dragon News-About",
+  description: "The best news paper in the world",}
 
+export const About = () => {
+ 
 
-const About = () => {
     return (
         <div>
             about

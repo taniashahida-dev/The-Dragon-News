@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 
 const NewsCard = ({ news }) => {
-  console.log(news);
+  // console.log(news);
   return (
     <div className="card shadow-lg my-6">
       <div className="flex justify-between items-center p-4 rounded-t-sm bg-gray-100">
@@ -37,7 +37,7 @@ const NewsCard = ({ news }) => {
           src={news.image_url}
           height={300}
           width={400}
-          alt={news.title}
+          alt={news.author.name}
           className="w-full"
         ></Image>
 

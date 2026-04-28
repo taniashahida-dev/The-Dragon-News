@@ -8,12 +8,12 @@ import { CategoryData, getNewsCategory } from "@/lib/data";
 
 const NewsCategory =async ({params}) => {
     const {id} = await params
-    console.log(id)
+    // console.log(id)
 
      const data = await CategoryData()
   // console.log(data.news_category)
   const news =await getNewsCategory(id)
-  console.log(news)
+  // console.log(news)
     return (
           <div className="grid grid-cols-4 my-10 gap-3">
     <div className="col-span-1">
