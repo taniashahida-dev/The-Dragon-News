@@ -1,19 +1,41 @@
+"use client"
 
-  "use client"
-
+import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
+import { useState } from "react";
   import { useForm } from "react-hook-form";
+import { LuEye, LuEyeClosed } from "react-icons/lu";
   
   const ReistrationPage = () => {
-  
+   const [isShowPass, setShowPass]= useState(false)
        const {
       register,
       handleSubmit,
         formState: { errors },
      
     } = useForm()
-    const handleReg =(data)=>{
-  console.log(data)
+    const handleReg = async(data)=>{
+  // console.log(data)
+
+  const { data:res, error } = await authClient.signUp.email({
+        email : data.email,
+        password:data.password,
+        name:data.name,
+        image :data.photo
+      
+       
+    })
+console.log(res,error)
+if (error) {
+  alert(error.message)
+  return
+}
+      if (res) {
+        alert("SignUp successfull")
+      } 
+
     }
+  
     return (
       <div className="hero bg-base-200 h-screen">
         <div className="bg-white p-10 rounded-lg ">
@@ -63,22 +85,29 @@
       errors.email && (<p className="text-xs text-red-600">{errors.email.message}</p>)
   }
   
-            <fieldset className="fieldset ">
+            <fieldset className="fieldset relative">
               <legend className="fieldset-legend">Password</legend>
               <input
-                type="password"
+                type={isShowPass? "text":"password"}
                 className="input"
                 placeholder="Enter Your Password"
        {...register("password", { required:"Password field is required" })} 
               />
-            </fieldset>
-            {
+              <span className="cursor-pointer text-xl absolute top-3 right-5" onClick={()=>setShowPass(!isShowPass)}>
+                            {
+                              isShowPass?<LuEye />: <LuEyeClosed />
+                            }
+                           
+                          </span>
+                              {
       errors.password && (<p className="text-xs text-red-600">{errors.password.message}</p>)
   }
-  
-            <button className="btn bg-mauve-600 text-white w-full my-2">
+            </fieldset>
+        
+ 
+           <Link href={"/login"}> <button className="btn bg-mauve-600 text-white w-full my-2">
               Register
-            </button>
+            </button></Link>
           </form>
         
         </div>
