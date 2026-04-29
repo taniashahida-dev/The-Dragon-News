@@ -2,12 +2,15 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import { useState } from "react";
   import { useForm } from "react-hook-form";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
   
   const ReistrationPage = () => {
    const [isShowPass, setShowPass]= useState(false)
+   const router = useRouter();
        const {
       register,
       handleSubmit,
@@ -32,6 +35,7 @@ if (error) {
 }
     if (res) {
         alert("SignUp successfull")
+         router.push("/login")
     }
   console.log(res,error)
     }
