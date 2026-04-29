@@ -104,10 +104,10 @@ if (error) {
   }
             </fieldset>
         
- 
-           <Link href={"/login"}> <button className="btn bg-mauve-600 text-white w-full my-2">
+ <button className="btn bg-mauve-600 text-white w-full my-2">
               Register
-            </button></Link>
+            </button>
+           <Link href={"/login"}> </Link>
           </form>
         
         </div>
