@@ -21,19 +21,19 @@ import { LuEye, LuEyeClosed } from "react-icons/lu";
         email : data.email,
         password:data.password,
         name:data.name,
-        image :data.photo
+        image :data.photo,
       
-       
+     
     })
-console.log(res,error)
+
 if (error) {
   alert(error.message)
   return
 }
-      if (res) {
+    if (res) {
         alert("SignUp successfull")
-      } 
-
+    }
+  console.log(res,error)
     }
   
     return (
